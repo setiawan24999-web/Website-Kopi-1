@@ -1,0 +1,595 @@
+:root {
+    --primary: #b6895b;
+    --bg: #010101;
+
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+    outline: 0;
+    border: none;
+    text-decoration: none;
+}
+body {
+    font-family: 'Poppins',sans-serif;
+    background-color: var(--bg);
+    color: #fff;
+}
+
+/* navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.4rem 7%;
+    background: rgb(1, 1, 1, 0.8);
+    border-bottom: 1px solid #3f3022;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+}
+.navbar .navbar-logo {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fff;
+    font-style: italic;
+}
+.navbar .navbar-logo span {
+    color: var(--primary);
+
+}
+.navbar .navbar-nav a {
+    color: #fff;
+    display: inline-block;
+    font-size: 1,3rem;
+    margin: 0 1rem;
+}
+.navbar .navbar-nav a:hover {
+    color: var(--primary);
+}
+
+.navbar .navbar-nav a::after {
+    content: '';
+    display: block;
+    border-bottom: 0.5rem ;
+    border-bottom: 0.1rem solid var(--primary);
+    transform: scaleX(0);
+    transition: 0.2s; linear
+}
+.navbar .navbar-nav a:hover::after{
+    transform: scaleX(1);
+
+}
+.navbar .navbar-extra a{
+    margin: 0 0.5rem;
+}
+.navbar .navbar-extra a :hover {
+color: var(--primary)
+}
+
+
+
+
+
+#humburger-menu {
+    display: none;
+}
+/* warna star */
+.hero {
+    min-height: 100vh;
+display: flex;
+align-items: center;
+    background-image: url('../img/header.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;        /* penuh layar (zoom) */
+
+    background-position: right center; 
+    /* ubah fokus ke kopi */
+}
+
+.hero{
+    color: #6e3f10;
+    
+}
+.hero {
+    min-height: 100vh;
+    padding-top: 120px;
+
+    /* background kopi */
+    background-image: url('../img/header.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    
+    position: relative;
+}
+
+/* overlay gelap biar keren */
+.hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(7, 7, 7, 0.55); /*gelap tapi elegan*/
+    z-index: 1;
+}
+
+/* isi hero */
+.hero .content {
+    position: relative;
+    z-index: 2;          /* di atas overlay */
+    color: #fff;
+    max-width: 60rem;
+    padding: 1.4rem 7%;
+}
+
+/* judul */
+.hero .content h2 {
+    font-size: 3rem;
+    line-height: 1.2;
+}
+
+/* warna kata Kopi */
+.hero .content h2 span {
+    color: #b6895b;
+}
+
+/* paragraf */
+.hero .content p {
+    margin: 1rem 0;
+    color: #eee;
+    font-weight: 100;
+}
+
+/* tombol */
+.hero .cta {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    background: #84653d;
+    color: #fff;
+    border-radius: 5px;
+}
+.hero .cta:hover{
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    background: #f37d07;
+    color: #151212;
+    border-radius: 5px;
+}
+
+/* warna finis */
+
+/* desktop */
+@media (max-width: 1366px){
+    html{
+        font-size: 95%;
+    }
+}
+
+
+
+/* android */
+@media (max-width: 768px){
+    html{
+        font-size: 70%;
+    }
+    #humburger-menu{
+       display: inline-block
+    }
+ .navbar .navbar-nav {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background-color: #b4b0b0;
+    width: 30rm;
+    height: 100vh;
+    transition: 0.5s;
+ }
+.navbar .navbar-nav.active {
+    right: 0;
+}
+.navbar .navbar-nav a{
+    color: var(--bg);
+    display: block;
+    margin: 1.5rem;
+    padding: 0.5rem;
+    font-size: 2rem;
+}
+.navbar .navbar-nav a::after{
+    transform-origin: 0 0;
+}
+.navbar .navbar-nav a:hover:after{
+    transform:scaleX(0.2)
+}
+@media (max-width: 768px) {
+  .about .row {
+    flex-direction: column;   /* PINDAH KE BAWAH */
+  }
+
+  .about .content {
+    margin-top: 1.5rem;      /* JARAK DARI GAMBAR */
+    text-align: center;      /* OPSIONAL */
+  }
+}
+}
+
+
+/* android */
+@media (max-width: 550px){
+    html{
+        font-size: 55%;
+    }
+}
+body  {
+    min-height: 2000px;
+}
+.hero::after{
+    counter-reset: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, rgba(1,1,3));
+}
+.hero .content{
+    padding: 1. 4rem 7%;
+    max-width: 60rem;
+}
+.hero .content h1{
+font-size: 5em;
+color: #fff;
+text-shadow: 1px 1px 3px rgba(1,1,3);
+line-height: 1;
+}
+.hero .content p{
+  
+    font-size: 150%;
+  
+
+}
+.hero .content .cta {
+    margin-top: 1rem;
+    display: inline-block;
+    padding: 1rem 3rem;
+    font-size: 1.4rem;
+    border-radius: 0.5rem;
+    box-shadow: 1px 1px 3px rgba(1,1,0,5);
+}
+
+.about .contac{
+    padding: 4rem 7% 1.4rem;
+}
+.about h2 .contac h2{
+    text-align: center;
+    font-size: 2.6rem;
+    margin-bottom: 1.5rem;
+   
+}
+.about h2 span .contac h2 span{
+    color: var(--primary);
+}
+.about .row {
+   
+}
+
+.about.row.about-img{
+    flex: 1 6 45rem;
+}
+.about.row.about-img{
+    width: 90%;
+}
+.about .row .content {
+    flex: 1 4 35rem;
+    padding: 5rem;
+}
+.about .row .content{
+    font-size: 2rem;
+   margin-bottom: 3rem;
+}
+.about.row .content{
+    margin bottom: 0.8rem;
+    margin-bottom: 1.4rem;
+    font-weight: 50;
+    line-height: 1.6
+}
+/* ================= ABOUT SECTION ================= */
+
+.about {
+  padding: 6rem 13%;
+  background-color: #010101;
+  color: #fff;
+}
+
+/* Judul */
+.about h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.about h2 span {
+  color: #c49b63;
+}
+
+/* Layout kiri-kanan */
+.about .row {
+  display: flex;
+  align-items: center;
+  gap: 6rem;                 /* JARAK ANTAR KONTEN */
+}
+
+/* Gambar kiri */
+.about .about-img {
+  flex: 1 1 45%;
+  height: 400px;
+  background: url("img/coffe3.avif") center / cover no-repeat;
+  border-radius: 1rem;
+}
+
+/* Tulisan kanan */
+.about .content {
+  flex: 1 1 50%;
+  padding: 2rem;             /* JARAK DALAM */
+}
+
+/* Teks */
+.about .content h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.menu{
+    padding: 5.8rem 5% 1.4rem;
+}
+.menu h2 {
+    text-align: center;
+    font-size: 2.5rem;
+}
+.menu h2 span  {
+color:var(--primary)}
+.menu p{
+    text-align: center;
+    max-width: 25rem;
+    margin: auto;
+    padding: 1rem;
+    font-weight: 100;
+}
+.menu .row{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 5rem;
+    justify-content: center;
+}
+.menu .row .menu-card {
+    text-align: center;
+    padding-bottom: 1rem;
+
+}
+.menu .row .menu-card img {
+    border-radius: 50%;
+    width: 80%;
+} 
+.menu .row .menu-card .menu-card-title{
+margin: 1.5rem auto 0.5rem;
+}
+
+/* .contac{
+     padding: 5.8rem 5% 1.4rem;
+}
+
+.contac h2 p{
+      text-align: center;
+    max-width: 25rem;
+    margin: auto;
+    padding: 1rem;
+    font-weight: 100;
+}.contac h2 span{
+    color: var(--primary);
+    
+} */
+ /* ================= CONTACT SECTION ================= */
+
+.contac {
+  min-height: 80vh;          /* DARI 100vh → 80vh */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* DARI center → flex-start */
+  align-items: center;
+  text-align: center;
+  padding: 6rem 7%;          /* padding atas lebih terasa */
+  background-color: #010101;
+  color: #fff;
+}
+
+
+/* Judul */
+.contac h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.contac h2 span {
+  color: #c49b63;
+}
+
+/* Paragraf */
+.contac p {
+  max-width: 600px;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #ddd;
+}
+/* contac section */
+.contac .row{
+    display: flex;
+    margin-top: 2rem;
+    background-color: #3f3c3c;
+    flex-wrap: wrap;
+}
+.contac .row .map{
+    flex: 1 1 45rem;
+    width: 100%;
+    object-fit: cover;
+}
+/* ================= CONTACT SECTION ================= */
+
+/* ================= CONTACT SECTION ================= */
+
+.contac {
+  padding: 6rem 7%;
+  background-color: #010101;
+  color: #fff;
+}
+
+.contac h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.contac h2 span {
+  color: #c49b63;
+}
+
+.contac p {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 3rem;
+  color: #ddd;
+}
+
+/* Layout kiri-kanan */
+.contac .row {
+  display: flex;
+  gap: 3rem;                 /* jarak map & form */
+  align-items: stretch;
+}
+
+/* MAP kiri */
+.contac .map {
+  flex: 1 1 50%;
+  width: 100%;
+  height: 450px;
+  border: none;
+  border-radius: 1rem;
+}
+
+/* FORM kanan */
+.contac form {
+  flex: 1 1 45%;
+  background-color: #111;
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+/* Input */
+.contac .input-group {
+  display: flex;
+  align-items: center;
+  background-color: #010101;
+  border: 1px solid #333;
+  margin-bottom: 1.5rem;
+  padding: 0.8rem 1rem;
+  border-radius: 0.5rem;
+}
+
+.contac .input-group i {
+  margin-right: 1rem;
+  color: #e6a50f;
+}
+
+.contac .input-group input {
+  width: 100%;
+  background: none;
+  color: #fff;
+  font-size: 1rem;
+}
+
+/* Button */
+.contac .btn {
+  width: 100%;
+  padding: 1rem;
+  background-color: #988a75;
+  color: #000;
+  font-size: 1.1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.contac .btn:hover {
+  background-color: #d45100;
+}
+
+/* ================= FOOTER ================= */
+
+footer {
+  background: linear-gradient(
+    to top,
+    #000,
+    #0a0a0a,
+    #111
+  );
+  padding: 3rem 7% 2rem;
+  text-align: center;
+  color: #a09090;
+}
+
+/* Sosial media */
+footer .sosial {
+  margin-bottom: 1.5rem;
+}
+
+footer .sosial a {
+  color: #c49b63;
+  margin: 0 0.8rem;
+  font-size: 1.5rem;
+  transition: 0.3s ease;
+}
+
+footer .sosial a:hover {
+  color: #fff;
+  transform: translateY(-4px);
+}
+
+/* Links */
+footer .links {
+  margin-bottom: 1.5rem;
+}
+
+footer .links a {
+  color: #eee;
+  margin: 0 1rem;
+  font-size: 1rem;
+  position: relative;
+}
+
+/* garis animasi bawah link */
+footer .links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background-color: #c49b63;
+  transition: 0.3s ease;
+}
+
+footer .links a:hover::after {
+  width: 100%;
+}
+
+/* Credit */
+footer .creadit {
+  font-size: 0.9rem;
+  color: #464343;
+}
+
+footer .creadit a {
+  color: #c49b63;
+  font-weight: 500;
+}
+
+
